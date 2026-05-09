@@ -1,0 +1,4 @@
+repository "VertigoCase 2026-05-09_09-52-19/VertigoCase@18967196547737@cloud"
+  path "/"
+    br "/main"
+    co "/main"
