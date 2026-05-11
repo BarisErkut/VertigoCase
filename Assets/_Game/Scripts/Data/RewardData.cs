@@ -1,11 +1,10 @@
 using UnityEngine;
+using System;
 
-namespace VertigoCase.Data
+[Serializable]
+public class RewardData
 {
-    [CreateAssetMenu(fileName = "NewRewardData", menuName = "VertigoCase/Data/Reward Data")]
-    public class RewardData : ScriptableObject
-    {
-        public string rewardName;
-        public Sprite rewardIcon;
-    }
+    public Sprite rewardIcon;
+    public string amountText;
+    public bool isBomb;
 }

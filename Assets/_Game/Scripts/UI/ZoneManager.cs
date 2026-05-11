@@ -37,6 +37,7 @@ public class ZoneManager : MonoBehaviour
             int nodeValue = currentZone + offset;
 
             zoneNodes[i].SetupNode(nodeValue, currentZone);
+            WheelManager.Instance.UpdateWheelForZone(currentZone);
         }
     }
 }

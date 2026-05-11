@@ -1,25 +1,13 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-namespace VertigoCase.Data
+[CreateAssetMenu(fileName = "NewWheelConfig", menuName = "Wheel/Wheel Config")]
+public class WheelConfig : ScriptableObject
 {
-    // It is going to show the quantity and type of the reward. 
-    // Boolean will help with the bomb case.
-    [Serializable]
-    public struct WheelSlice 
-    {
-        public RewardData reward;
-        public int amount;
-        public bool isBomb;
-    }
+    [Header("Type of wheel")]
+    public Sprite wheelBaseSprite;
+    public Sprite pointerSprite;
 
-    [CreateAssetMenu(fileName = "NewWheelConfig", menuName = "VertigoCase/Data/Wheel Config")]
-    public class WheelConfig : ScriptableObject
-    {
-        // This will help decide what kind of a stage the player has reached at a time. Also has a slice count which we will set to 8.
-        public enum WheelType { Standard, Silver, Golden }
-        public WheelType wheelType;
-        public List<WheelSlice> slices; 
-    }
+    [Header("Rewards (set to 8)")]
+    public List<RewardData> rewards = new List<RewardData>();
 }
