@@ -8,6 +8,7 @@ public class WheelConfig : ScriptableObject
     public Sprite wheelBaseSprite;
     public Sprite pointerSprite;
 
-    [Header("Rewards (set to 8)")]
-    public List<RewardData> rewards = new List<RewardData>();
+    [Header("Dynamic Reward Pool")]
+    public List<RewardData> standardRewardsPool = new List<RewardData>(); 
+    public RewardData bombReward;
 }

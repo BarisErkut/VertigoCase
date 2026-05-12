@@ -180,6 +180,11 @@ MonoBehaviour:
   bronzeConfig: {fileID: 11400000, guid: 754c1419c33ca9145a65d839ad96576e, type: 2}
   silverConfig: {fileID: 11400000, guid: 66e91a42a21f0cb47b2426eef2d71ad7, type: 2}
   goldConfig: {fileID: 11400000, guid: c8af838d461b44148a22d36b31ee8154, type: 2}
+  wheelSlicesContainer: {fileID: 2024896185}
+  spinButton: {fileID: 791543971}
+  spinDuration: 3
+  extraSpins: 5
+  spinEase: 21
 --- !u!1 &59731435
 GameObject:
   m_ObjectHideFlags: 0

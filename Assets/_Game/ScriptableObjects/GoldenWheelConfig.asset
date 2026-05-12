@@ -14,21 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelBaseSprite: {fileID: 21300000, guid: 8d41a2ee64df6b24a899ffc23205f40f, type: 3}
   pointerSprite: {fileID: 21300000, guid: 26ebbea9a35faa24d9e43e664a9916f4, type: 3}
-  rewards:
-  - rewardIcon: {fileID: 21300000, guid: 291367223d3802645bcc1d773fff0fee, type: 3}
-    amountText: X1
-    isBomb: 0
-  - rewardIcon: {fileID: 21300000, guid: a307cdffc9c5e914f9b1396c06b71c7d, type: 3}
-    amountText: X1
-    isBomb: 0
-  - rewardIcon: {fileID: 21300000, guid: fd203dabc868cf24aa57c3454a02c28b, type: 3}
-    amountText: X1
-    isBomb: 0
-  - rewardIcon: {fileID: 21300000, guid: a83fa06323a31054da9905bc590068aa, type: 3}
-    amountText: X1
+  standardRewardsPool:
+  - rewardIcon: {fileID: 21300000, guid: fcfc92f0acfdd9e4fb31bae0ad5ed929, type: 3}
+    amountText: X200
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: fcfc92f0acfdd9e4fb31bae0ad5ed929, type: 3}
-    amountText: X10
+    amountText: X400
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: 58d6b7da286ad9c499e68d6f4cc1ff07, type: 3}
+    amountText: X1400
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: 58d6b7da286ad9c499e68d6f4cc1ff07, type: 3}
     amountText: X3000
@@ -36,6 +30,40 @@ MonoBehaviour:
   - rewardIcon: {fileID: 21300000, guid: a83fa06323a31054da9905bc590068aa, type: 3}
     amountText: X2
     isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: 291367223d3802645bcc1d773fff0fee, type: 3}
+    amountText: X4
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: 0c7757a508bc44142b48ca36b6791eff, type: 3}
+    amountText: X1
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: 57d9764b89344c44ea2b9dec42d1d52c, type: 3}
+    amountText: X1
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: 7de9d80f141710a439f04b7cf0741e90, type: 3}
+    amountText: X1
+    isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: 3bb004cf516f48e409d5257071d46a22, type: 3}
     amountText: X1
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: fd203dabc868cf24aa57c3454a02c28b, type: 3}
+    amountText: X1
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: 133052822465b9341aa8f1397c578d16, type: 3}
+    amountText: X1
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: e83efef338a607f4c8ffc1b6aac92198, type: 3}
+    amountText: X100
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: 51549a7ce02b8e04f9005fc66f1a58c5, type: 3}
+    amountText: X100
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: 059a725ec4c80f642a713234da511e44, type: 3}
+    amountText: X100
+    isBomb: 0
+  - rewardIcon: {fileID: 21300000, guid: 802956c5b45fe00458f693f750dfdcd8, type: 3}
+    amountText: X100
+    isBomb: 0
+  bombReward:
+    rewardIcon: {fileID: 0}
+    amountText: 
     isBomb: 0
