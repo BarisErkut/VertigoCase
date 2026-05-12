@@ -18,6 +18,7 @@ public class RewardPopupUI : MonoBehaviour
 
     [Header("Animation Settings")]
     [SerializeField] private float shineRotateSpeed = -50f;
+    private RewardData currentReward;
 
     private void Awake()
     {
@@ -67,6 +68,8 @@ public class RewardPopupUI : MonoBehaviour
         ui_image_vfx_shine.transform.DORotate(new Vector3(0, 0, 360), 360f / Mathf.Abs(shineRotateSpeed), RotateMode.FastBeyond360)
             .SetLoops(-1, LoopType.Restart)
             .SetEase(Ease.Linear);
+
+        currentReward = wonReward;
     }
 
     private void OnCollectClicked()
@@ -74,6 +77,7 @@ public class RewardPopupUI : MonoBehaviour
         ui_image_vfx_shine.transform.DOKill();
         ui_panel_reward_popup.SetActive(false);
 
-        Debug.Log("Ödül toplandı! Envantere gidiyor...");
+        InventoryManager.Instance.AddReward(currentReward);
+        ZoneManager.Instance.NextZone();
     }
 }
