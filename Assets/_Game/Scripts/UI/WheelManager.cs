@@ -148,6 +148,7 @@ public class WheelManager : MonoBehaviour
         else
         {
             Debug.Log($"ÖDÜL KAZANILDI: {wonReward.amountText}");
+            RewardPopupUI.Instance.ShowReward(wonReward);
             spinButton.interactable = true; 
         }
     }
