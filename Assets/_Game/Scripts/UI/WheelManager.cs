@@ -144,12 +144,20 @@ public class WheelManager : MonoBehaviour
         if (wonReward.isBomb)
         {
             Debug.Log("BOMBA GELDİ!");
+            DeathPopupUI.Instance.ShowDeathPopup(wonReward);
         }
         else
         {
             Debug.Log($"ÖDÜL KAZANILDI: {wonReward.amountText}");
             RewardPopupUI.Instance.ShowReward(wonReward);
             spinButton.interactable = true; 
+        }
+    }
+    public void EnableSpinButton()
+    {
+        if (spinButton != null)
+        {
+            spinButton.interactable = true;
         }
     }
 }

@@ -13,7 +13,8 @@ public class RewardPopupUI : MonoBehaviour
     
     [SerializeField] private Image ui_image_reward_icon_value; 
     [SerializeField] private TextMeshProUGUI ui_text_reward_amount_value; 
-    
+    [SerializeField] private TextMeshProUGUI ui_text_reward_name_value;
+
     [SerializeField] private Button ui_button_collect;
 
     [Header("Animation Settings")]
@@ -59,6 +60,7 @@ public class RewardPopupUI : MonoBehaviour
     {
         ui_image_reward_icon_value.sprite = wonReward.rewardIcon;
         ui_text_reward_amount_value.text = wonReward.amountText;
+        ui_text_reward_name_value.text = wonReward.rewardName;
 
         ui_panel_reward_popup.SetActive(true);
 

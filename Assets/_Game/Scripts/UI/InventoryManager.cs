@@ -37,4 +37,12 @@ public class InventoryManager : MonoBehaviour
         if (int.TryParse(numberOnly, out int result)) return result;
         return 1; 
     }
+    public void ClearInventory()
+    {
+        foreach (Transform child in inventoryContent)
+        {
+            Destroy(child.gameObject);
+        }
+        collectedItems.Clear();
+    }
 }

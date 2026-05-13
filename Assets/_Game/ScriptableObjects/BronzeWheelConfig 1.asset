@@ -16,45 +16,59 @@ MonoBehaviour:
   pointerSprite: {fileID: 21300000, guid: c6ebe296ae85696468ef09ccf4d81819, type: 3}
   standardRewardsPool:
   - rewardIcon: {fileID: 21300000, guid: d94c78e29cb6e1040b7983b951a361a5, type: 3}
+    rewardName: M67 Grenade
     amountText: X1
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: 0bcc669e19ddfd94aa9e3f3098a91c81, type: 3}
+    rewardName: M26 Grenade
     amountText: X1
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: c9ae229b33d45d748a0ca1256afdb3aa, type: 3}
+    rewardName: Armor Points
     amountText: X2
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: 8af7452679785e841a2b6ff6706b9eeb, type: 3}
+    rewardName: Rifle Points
     amountText: X2
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: fcfc92f0acfdd9e4fb31bae0ad5ed929, type: 3}
+    rewardName: Gold
     amountText: X3
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: 923ff746a25d1cc428ec7c567dd90b0f, type: 3}
+    rewardName: Bronze Chest
     amountText: X1
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: cc84937f851511e459dfae9ead8c4cda, type: 3}
+    rewardName: Small Chest
     amountText: X1
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: fcfc92f0acfdd9e4fb31bae0ad5ed929, type: 3}
+    rewardName: Gold
     amountText: X5
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: 58d6b7da286ad9c499e68d6f4cc1ff07, type: 3}
+    rewardName: Cash
     amountText: X80
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: 58d6b7da286ad9c499e68d6f4cc1ff07, type: 3}
+    rewardName: Cash
     amountText: X160
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: 291367223d3802645bcc1d773fff0fee, type: 3}
+    rewardName: Standart Chest
     amountText: X1
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: cc84937f851511e459dfae9ead8c4cda, type: 3}
+    rewardName: Small Chest
     amountText: X2
     isBomb: 0
   - rewardIcon: {fileID: 21300000, guid: 67a5f39dffd90724d864de7561358351, type: 3}
+    rewardName: Molotov
     amountText: X1
     isBomb: 0
   bombReward:
     rewardIcon: {fileID: 21300000, guid: 3bd306498d45cd846956317ba0bcb46e, type: 3}
-    amountText: OUT
+    rewardName: BOMB
+    amountText: X
     isBomb: 1
