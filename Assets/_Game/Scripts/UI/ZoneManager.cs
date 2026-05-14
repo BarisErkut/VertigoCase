@@ -30,6 +30,7 @@ public class ZoneManager : MonoBehaviour
         
         UpdateZoneUI();
         WheelManager.Instance.UpdateWheelForZone(currentZone); 
+        WheelManager.Instance.DisableCollectButton();
     }
 
     private void Update()
@@ -64,7 +65,7 @@ public class ZoneManager : MonoBehaviour
         else
         {
             UpdateZoneUI();
-            WheelManager.Instance.UpdateWheelForZone(currentZone);
+            WheelManager.Instance.UpdateWheelForZone(currentZone);;
         }
     }
 
@@ -74,8 +75,11 @@ public class ZoneManager : MonoBehaviour
         {
             int offset = i - 4; // Ortayı baz al
             int nodeValue = currentZone + offset;
-
+            WheelManager.Instance.EnableCollectButton();
             zoneNodes[i].SetupNode(nodeValue, currentZone);
+            ZoneIndicatorUI.Instance.UpdateIndicators(currentZone);
+            WheelManager.Instance.PlayZoneChangePopAnimation();
+            WheelManager.Instance.StartIdleSpin();
         }
     }
 }

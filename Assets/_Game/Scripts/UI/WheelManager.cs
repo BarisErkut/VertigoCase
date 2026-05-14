@@ -25,16 +25,21 @@ public class WheelManager : MonoBehaviour
     [SerializeField] private float spinDuration = 3f;
     [SerializeField] private int extraSpins = 5;
     [SerializeField] private Ease spinEase = Ease.OutCirc;
+    [SerializeField] private Transform ui_panel_wheel;
+    [SerializeField] private RectTransform ui_panel_wheel_container; 
 
+    private Tween idleSpinTween;
     private bool isSpinning = false;
     private Tween currentSpinTween;
-    
+    public UnityEngine.UI.Button button_collect;
+
     private List<RewardData> activeRewards = new List<RewardData>();
 
     private void Awake() => Instance = this;
 
     private void Start()
     {
+        StartIdleSpin();
         spinButton.onClick.AddListener(SpinWheel);
     }
 
@@ -47,7 +52,10 @@ public class WheelManager : MonoBehaviour
             currentSpinTween.Kill();
         }
         
-        wheelBaseImage.transform.DOKill();
+        if (wheelBaseImage != null)
+        {
+            wheelBaseImage.transform.DOKill();
+        }
     }
 
     public void UpdateWheelForZone(int zone)
@@ -117,9 +125,10 @@ public class WheelManager : MonoBehaviour
     private void SpinWheel()
     {
         if (isSpinning) return;
-        
+        StopIdleSpin();
         isSpinning = true;
         spinButton.interactable = false;
+        button_collect.interactable = false;
 
         int totalSlices = slices.Count; 
         int winningIndex = Random.Range(0, totalSlices);
@@ -138,26 +147,67 @@ public class WheelManager : MonoBehaviour
     private void OnSpinComplete(int winningIndex)
     {
         isSpinning = false;
-        
         RewardData wonReward = activeRewards[winningIndex];
 
         if (wonReward.isBomb)
         {
-            Debug.Log("BOMBA GELDİ!");
             DeathPopupUI.Instance.ShowDeathPopup(wonReward);
         }
         else
         {
-            Debug.Log($"ÖDÜL KAZANILDI: {wonReward.amountText}");
             RewardPopupUI.Instance.ShowReward(wonReward);
-            spinButton.interactable = true; 
+            EnableSpinButton();
         }
     }
+
     public void EnableSpinButton()
     {
         if (spinButton != null)
         {
             spinButton.interactable = true;
+        }
+    }
+
+    public void EnableCollectButton()
+    {
+        if (button_collect != null)
+        {
+            button_collect.interactable = true;
+        }
+    }
+    public void DisableCollectButton()
+    {
+        if (button_collect != null)
+        {
+            button_collect.interactable = false;
+        }
+    }
+
+    public void StartIdleSpin()
+    {
+        StopIdleSpin();
+        
+        idleSpinTween = ui_panel_wheel.DORotate(new Vector3(0, 0, -360), 20f, RotateMode.FastBeyond360)
+            .SetRelative(true)
+            .SetEase(Ease.Linear)
+            .SetLoops(-1, LoopType.Incremental);
+    }
+
+    public void StopIdleSpin()
+    {
+        if (idleSpinTween != null)
+        {
+            idleSpinTween.Kill();
+            idleSpinTween = null;
+        }
+    }
+
+    public void PlayZoneChangePopAnimation()
+    {
+        if (ui_panel_wheel_container != null)
+        {
+            ui_panel_wheel_container.DOKill(true);
+            ui_panel_wheel_container.DOPunchScale(new Vector3(0.1f, 0.1f, 0f), 0.6f, 2, 0.5f);
         }
     }
 }

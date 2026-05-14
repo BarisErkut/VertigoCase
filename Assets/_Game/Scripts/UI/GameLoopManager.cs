@@ -9,17 +9,28 @@ public class GameLoopManager : MonoBehaviour
 
     public void Revive()
     {
-        Debug.Log("💎 Canlanıldı! Oyun para düşüldü, aynı zone'dan devam ediliyor.");
         WheelManager.Instance.EnableSpinButton();
+        WheelManager.Instance.EnableCollectButton();
     }
 
     public void GiveUp()
     {
-        Debug.Log("💥 Pes edildi! Envanter siliniyor, Zone 1'e dönülüyor.");
         InventoryManager.Instance.ClearInventory();
         ZoneManager.Instance.currentZone = 1;
         ZoneManager.Instance.UpdateZoneUI();
         WheelManager.Instance.UpdateWheelForZone(1);
         WheelManager.Instance.EnableSpinButton();
+        WheelManager.Instance.DisableCollectButton();
+        
+    }
+    public void CashOut() // works exactly as the give up button for the demo
+    {
+
+        InventoryManager.Instance.ClearInventory(); 
+        ZoneManager.Instance.currentZone = 1;
+        ZoneManager.Instance.UpdateZoneUI();
+        WheelManager.Instance.UpdateWheelForZone(1);
+        WheelManager.Instance.EnableSpinButton();
+        WheelManager.Instance.DisableCollectButton();
     }
 }
