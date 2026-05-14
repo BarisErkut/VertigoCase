@@ -19,7 +19,7 @@ I built the codebase in accordance with SOLID principles and Object-Oriented Pro
 * **Responsive UI:** I prepared the interface design with strict Anchor/Pivot rules to adapt perfectly to 20:9, 16:9, and 4:3 aspect ratios without any stretching. I set the Canvas Scale Mode to "Expand" as requested in the documentation.
 * **Animations:** I managed all UI animations via code using DOTween instead of relying on the root Canvas Animator component.
 
-## 🚀 Future Improvements (With More Time)
+## Future Improvements (With More Time)
 While the core requirements are fully met, If I had more time, I would implement the following features to enhance the game's depth and longevity:
 
 1. **Dynamic Reward Tiering:** In this demo, First zone's standart wheel has the same reward pool as 91st zone's standart wheel. I would improve tiered reward pools that unlock as the player progresses, ensuring that the stakes and prizes become significantly more valuable in higher zones.
