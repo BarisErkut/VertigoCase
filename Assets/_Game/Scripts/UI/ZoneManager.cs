@@ -42,7 +42,14 @@ public class ZoneManager : MonoBehaviour
         WheelManager.Instance.UpdateWheelForZone(currentZone); 
         WheelManager.Instance.DisableCollectButton();
     }
-
+    private void Update()
+    {
+        // test 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            NextZone();
+        }
+    }
     
     public void NextZone()
     {
