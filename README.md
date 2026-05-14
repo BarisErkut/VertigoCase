@@ -2,7 +2,7 @@
 
 Hi, I'm Barış Erkut. This is a 2D Wheel of Fortune interface I developed for the Vertigo Games interview process. I designed the project using Unity 2021 LTS. In this README.md file, I have put together a brief report to share my development process over the last week.
 ## Download and Test
-You can download and test the latest version (`.apk`) I compiled for Android devices from the **Releases** section on the right side of this repository. If you launch the game in Unity Editor, you can use "spacebar" to skip zones and get to any specific wheel you would like to see.
+You can download and test the latest version (`.apk`) I compiled for Android devices from the **Releases** section on the right side of this repository. If you launch the game in Unity Editor, you can use "spacebar" to skip zones and get to any specific wheel you would like to see. I have also included the game's screenshots for different aspects (16:9, 20:9, 4:3) in the Screenshots directory within the repo.
 
 ## Key Features
 * **Dynamic Wheel Structure:** I configured Bronze, Silver, and Gold wheel setups that change based on the player's current zone. Each wheel type has its own reward pool.
