@@ -35,7 +35,17 @@ public class WheelManager : MonoBehaviour
 
     private List<RewardData> activeRewards = new List<RewardData>();
 
-    private void Awake() => Instance = this;
+    private void Awake() 
+    {
+        if (Instance != null && Instance != this) 
+        {
+            Destroy(gameObject);
+        }
+        else 
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {

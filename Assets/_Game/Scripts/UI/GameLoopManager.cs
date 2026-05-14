@@ -5,7 +5,17 @@ public class GameLoopManager : MonoBehaviour
 {
     public static GameLoopManager Instance;
 
-    private void Awake() => Instance = this;
+    private void Awake() 
+    {
+        if (Instance != null && Instance != this) 
+        {
+            Destroy(gameObject);
+        }
+        else 
+        {
+            Instance = this;
+        }
+    }
 
     public void Revive()
     {

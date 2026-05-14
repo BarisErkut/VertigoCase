@@ -19,7 +19,17 @@ public class InventoryManager : MonoBehaviour
 
     private Dictionary<int, InventorySlotUI> collectedItems = new Dictionary<int, InventorySlotUI>();
 
-    private void Awake() => Instance = this;
+    private void Awake() 
+    {
+        if (Instance != null && Instance != this) 
+        {
+            Destroy(gameObject);
+        }
+        else 
+        {
+            Instance = this;
+        }
+    }
 
     public void AddReward(RewardData reward)
     {

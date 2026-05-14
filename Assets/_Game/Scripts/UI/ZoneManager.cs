@@ -19,7 +19,17 @@ public class ZoneManager : MonoBehaviour
 
     private float originalX;
 
-    private void Awake() => Instance = this;
+    private void Awake() 
+    {
+        if (Instance != null && Instance != this) 
+        {
+            Destroy(gameObject);
+        }
+        else 
+        {
+            Instance = this;
+        }
+    }
 
     private void Start() 
     {
@@ -33,14 +43,6 @@ public class ZoneManager : MonoBehaviour
         WheelManager.Instance.DisableCollectButton();
     }
 
-    private void Update()
-    {
-        // test 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            NextZone();
-        }
-    }
     
     public void NextZone()
     {
@@ -75,11 +77,11 @@ public class ZoneManager : MonoBehaviour
         {
             int offset = i - 4; // Ortayı baz al
             int nodeValue = currentZone + offset;
-            WheelManager.Instance.EnableCollectButton();
-            zoneNodes[i].SetupNode(nodeValue, currentZone);
-            ZoneIndicatorUI.Instance.UpdateIndicators(currentZone);
-            WheelManager.Instance.PlayZoneChangePopAnimation();
-            WheelManager.Instance.StartIdleSpin();
+            zoneNodes[i].SetupNode(nodeValue, currentZone);  
         }
+        ZoneIndicatorUI.Instance.UpdateIndicators(currentZone);
+        WheelManager.Instance.PlayZoneChangePopAnimation();
+        WheelManager.Instance.EnableCollectButton();
+        WheelManager.Instance.StartIdleSpin();
     }
 }

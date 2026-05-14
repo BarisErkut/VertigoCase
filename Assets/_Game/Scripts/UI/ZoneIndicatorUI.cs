@@ -11,9 +11,16 @@ public class ZoneIndicatorUI : MonoBehaviour
     [SerializeField] private int safeZoneInterval = 5;
     [SerializeField] private int superZoneInterval = 30;
 
-    private void Awake()
+    private void Awake() 
     {
-        Instance = this;
+        if (Instance != null && Instance != this) 
+        {
+            Destroy(gameObject);
+        }
+        else 
+        {
+            Instance = this;
+        }
     }
     private void Start()
     {
